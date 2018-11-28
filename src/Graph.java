@@ -16,7 +16,7 @@ public class Graph implements Iterable<Edge>{
 	ArrayList<LinkedList<Arc>> outAdjacency;
 	
 	public boolean isVertex(int index) {
-	    return (index>=0 & index < order);
+	    return ! adjacency.get(index).isEmpty();
 	}
 
 	/**
@@ -32,14 +32,15 @@ public class Graph implements Iterable<Edge>{
 		}
 		return res;
 	}
-	
+	//upperBound est l'ordre maximal du graphe
 	public Graph(int upperBound) {
 	    order = 0;
 	    adjacency = makeList(upperBound);
 	}
-	
+
+	//utilité de cette méthode ???
 	public void addVertex(int indexVertex) {
-	    // à remplir
+        order++; //prévoir une exception si ordre > upperbound
 	}
 	
 	public void ensureVertex(int indexVertex) {
@@ -48,10 +49,16 @@ public class Graph implements Iterable<Edge>{
 	
 	public void addArc(Arc arc) {
 	    // à remplir
+        //si un des deux sommets n'existe pas, lancer une exception
 	}
 	
 	public void addEdge(Edge e) {
 	    // à remplir
+        // e = (u,v)
+        //if not isVertex(u) do order++
+        //if not isVertex(v) do order++
+        //adjacency(u).add(v)
+        //adjacency(v).add(u)
 	}
 
 	public Graph kruskal (){
