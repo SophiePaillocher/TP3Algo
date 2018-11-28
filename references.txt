@@ -6,4 +6,7 @@ Algo de Prim :
 https://fr.wikipedia.org/wiki/Algorithme_de_Prim
 http://www.irem.univ-bpclermont.fr/IMG/pdf/3Recouvrant.pdf
 
+Algo de Kruskal :
+Introduction à l'algorithmique, Livre de Charles E. Leiserson, Clifford Stein, Ronald Rivest et Thomas H. Cormen
+
 Classe Union find : https://www.cs.waikato.ac.nz/~bernhard/317/source/graph/UnionFind.java

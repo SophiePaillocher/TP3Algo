@@ -53,5 +53,15 @@ public class Graph implements Iterable<Edge>{
 	public void addEdge(Edge e) {
 	    // à remplir
 	}
+
+	public Graph kruskal (){
+        UnionFind ensemble = new UnionFind(order);
+        //trier les arêtes par ordre croissant de leurs poids
+        // pour chaque arête (u,v)
+        //si ensemble.find(u) != ensemble.find(v)
+        // alors ensemble.union(u,v)
+        //retourner ensemble
+	    return null;
+    }
 	
 }
