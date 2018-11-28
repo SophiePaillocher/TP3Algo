@@ -1,0 +1,9 @@
+Algorithme de Dijkstra : 
+https://www-fourier.ujf-grenoble.fr/~parisse/giac/doc/fr/casrouge/casrouge010.html
+https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra
+
+Algo de Prim :
+https://fr.wikipedia.org/wiki/Algorithme_de_Prim
+http://www.irem.univ-bpclermont.fr/IMG/pdf/3Recouvrant.pdf
+
+Classe Union find : https://www.cs.waikato.ac.nz/~bernhard/317/source/graph/UnionFind.java
