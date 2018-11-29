@@ -1,11 +1,11 @@
 
 public class Edge implements Comparable<Edge> {
 
-	protected int source;
-	protected int dest;
+	protected Vertex source;
+	protected Vertex dest;
 	double weight;
 	
-	public Edge(int source, int dest, double weight) {
+	public Edge(Vertex source, Vertex dest, double weight) {
 		this.source = source;
 		this.dest = dest;
 		this.weight = weight;
@@ -17,15 +17,15 @@ public class Edge implements Comparable<Edge> {
 		return 1;
 	}
 	
-	public int oppositeExtremity(int vertex) {
-		return (dest == vertex ? source : dest);
+	public Vertex oppositeExtremity(Vertex vertex) {
+		return (dest.getId() == vertex.getId() ? source : dest);
 	}
 	
-	public int getSource() {
+	public Vertex getSource() {
 		return this.source;
 	}
 	
-	public int getDest() {
+	public Vertex getDest() {
 		return this.dest;
 	}
 	
