@@ -14,9 +14,10 @@ public class Graph implements Iterable<Edge>{
 	ArrayList<LinkedList<Edge>> adjacency;
 	ArrayList<LinkedList<Arc>> inAdjacency;
 	ArrayList<LinkedList<Arc>> outAdjacency;
+	ArrayList<Vertex> vertices;
 	
-	public boolean isVertex(int index) {
-	    return ! adjacency.get(index).isEmpty();
+	public boolean hasVertex(Vertex v) {
+	    return vertices.contains(v);
 	}
 
 	/**
@@ -36,11 +37,16 @@ public class Graph implements Iterable<Edge>{
 	public Graph(int upperBound) {
 	    order = 0;
 	    adjacency = makeList(upperBound);
+	    vertices = new ArrayList<>(upperBound);
+	
 	}
 
-	//utilité de cette méthode ???
-	public void addVertex(int indexVertex) {
+	/**
+	Ajoute un sommet en l'insérant à la position id dans la liste des sommets du graphe
+	*/
+	public void addVertex(Vertex vertex) {
         order++; //prévoir une exception si ordre > upperbound
+		vertices.add(vertex.getId(), vertex)
 	}
 	
 	public void ensureVertex(int indexVertex) {
@@ -55,8 +61,8 @@ public class Graph implements Iterable<Edge>{
 	public void addEdge(Edge e) {
 	    // à remplir
         // e = (u,v)
-        //if not isVertex(u) do order++
-        //if not isVertex(v) do order++
+        //if not hasVertex(u) do order++
+        //if not hasVertex(v) do order++
         //adjacency(u).add(v)
         //adjacency(v).add(u)
 	}
