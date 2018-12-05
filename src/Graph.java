@@ -76,5 +76,8 @@ public class Graph implements Iterable<Edge>{
         //retourner ensemble
 	    return null;
     }
-	
+
+	public LinkedList<Arc> outNeighbours(int sommet) {
+		return outAdjacency.get(sommet);
+	}
 }
