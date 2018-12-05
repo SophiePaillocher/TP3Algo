@@ -1,18 +1,15 @@
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 
-public class Parcours {
+public class RandomParcours {
 
 	Graph graph;
-	Stack<Arc> frontier;
+	List<Arc> frontier;
 	BitSet reached;
 	ArrayList<Arc> predecessor;
 	
 	private void etendsFrontiere(int sommet) {
-		for (Arc a : graph.outNeighbours(sommet))
+		for (Arc a : graph.outNeighbours(sommet)) //outNeighbours retourne les arêtes sortantes du sommet ----> liste d'adjacence
 			frontier.add(a);
 	}
 	
@@ -27,12 +24,11 @@ public class Parcours {
 	private void parcours(int source) {
 		reached.set(source);
 		etendsFrontiere(source);
-		while (!frontier.isEmpty())
-			explore(frontier.pop());
+		explore (frontier.get((int) (Math.random()*(frontier.size()-1)))); // explore à partir d'un arc choisi aléatoirement dans la frontière
 		
 	}
 	
-	private Parcours(Graph graph) {
+	private RandomParcours(Graph graph) {
 		this.graph = graph;
 		this.frontier = new Stack<>();
 		this.reached = new BitSet(graph.order);
@@ -44,7 +40,7 @@ public class Parcours {
 	
 
 	public static ArrayList<Arc> algo(Graph graph, int source) {
-		Parcours p = new Parcours(graph);
+		RandomParcours p = new RandomParcours(graph);
 		p.parcours(source);
 		return p.predecessor;
 	}
